@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "firstName": "Amanda",
+    "lastName": "Linasta",
+    "dateOfBirth": "02/04/1980",
+    "street": "43 8th Adison",
+    "city": "Addison",
+    "state": "Alabama",
+    "stateAbbrev": "AL",
+    "zipCode": "35083",
+    "startDate": "02/05/2023",
+    "department": "Sales"
+  },
+  {
+    "id": 2,
+    "firstName": "Penelop",
+    "lastName": "Linasta",
+    "dateOfBirth": "02/04/1980",
+    "street": "43 8th Adison",
+    "city": "Addison",
+    "state": "Alabama",
+    "stateAbbrev": "AL",
+    "zipCode": "35083",
+    "startDate": "02/05/2023",
+    "department": "Sales"
+  }
+]
