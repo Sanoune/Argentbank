@@ -1,13 +1,39 @@
 import PropTypes from "prop-types";
-
-export default function TableHeader({ label, onClick }) {
+import styles from "./TableHeader.module.css";
+const TableHeader = ({ label, onClick, isSorted, isAscending }) => {
   return (
-    <th onClick={onClick} style={{ cursor: "pointer" }}>
+    <th
+      className={`${styles["table-header"]} ${
+        isSorted ? styles["sorted"] : ""
+      }`}
+      onClick={onClick}
+    >
       {label}
+      <span className={styles["sort-arrows"]}>
+        <span
+          className={`${styles["sort-arrow"]} ${
+            isSorted && isAscending ? styles["active"] : ""
+          }`}
+        >
+          ▲
+        </span>
+        <span
+          className={`${styles["sort-arrow"]} ${
+            isSorted && !isAscending ? styles["active"] : ""
+          }`}
+        >
+          ▼
+        </span>
+      </span>
     </th>
   );
-}
+};
+
 TableHeader.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  isSorted: PropTypes.bool.isRequired,
+  isAscending: PropTypes.bool.isRequired,
 };
+
+export default TableHeader;

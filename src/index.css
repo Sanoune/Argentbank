@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css */
+
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+/* Vous pouvez également l'appliquer à d'autres éléments si nécessaire */
+h1,
+h2,
+h3 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}

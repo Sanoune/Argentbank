@@ -9,16 +9,18 @@ import { store } from "./store/store";
 
 function App() {
   return (
-    <Provider store={store}>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<CreateEmployee />} />
-            <Route path="/Employee" element={<EmployeeList />} />
-          </Routes>
-        </Router>
-      </LocalizationProvider>
-    </Provider>
+    <div className="p-12">
+      <Provider store={store}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Router>
+            <Routes>
+              <Route path="/" element={<CreateEmployee />} />
+              <Route path="/Employee" element={<EmployeeList />} />
+            </Routes>
+          </Router>
+        </LocalizationProvider>
+      </Provider>
+    </div>
   );
 }
 

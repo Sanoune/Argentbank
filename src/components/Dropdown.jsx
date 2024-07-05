@@ -25,9 +25,18 @@ export default function Dropdown({ buttonLabel, tabData, onSelect }) {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col justify-center">
       <label>{buttonLabel}</label>
       <Button
+        sx={{
+          color: "#9E9E9E",
+          border: "1px solid #E0E0E0", // Bordure verte clair
+          textAlign: "left", // Aligner le texte à gauche
+          justifyContent: "flex-start", // Justifier le contenu à gauche
+          padding: "12px", // Ajouter un padding à gauche pour l'espacement
+
+          width: "auto", // Largeur automatique pour ajuster au contenu
+        }}
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"

@@ -1,0 +1,10 @@
+/* styles.css (ou tout autre fichier de style) */
+.custom-button {
+  background-color: #2196f3; /* Couleur de fond personnalisée */
+  color: white; /* Couleur du texte */
+  border: 1px solid #2196f3; /* Bordure personnalisée */
+}
+
+.custom-menu-item {
+  color: #333; /* Couleur du texte personnalisée */
+}
