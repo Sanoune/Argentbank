@@ -9,7 +9,7 @@ import Dropdown from "./Dropdown";
 import Input from "./Input";
 import { NumberInput } from "./NumberInput";
 
-function CreatEmployeeForm() {
+function CreateEmployeeForm() {
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
@@ -85,6 +85,28 @@ function CreatEmployeeForm() {
   const closeModal = () => {
     setIsModalOpen(false);
     setModalMessage("");
+  };
+
+  const customOverlayStyle = {
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    zIndex: 2000,
+  };
+
+  const customContentStyle = {
+    background: "white",
+    padding: "10px",
+    borderRadius: "12px",
+  };
+
+  const customCloseButtonStyle = {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    background: "none",
+    border: "none",
+    fontSize: "1.8rem",
+    cursor: "pointer",
+    color: "white",
   };
 
   return (
@@ -190,7 +212,13 @@ function CreatEmployeeForm() {
             setFormData({ ...formData, department: selectedItem })
           }
         />
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          overlayStyle={customOverlayStyle}
+          contentStyle={customContentStyle}
+          closeButtonStyle={customCloseButtonStyle}
+        >
           <p>{modalMessage}</p>
         </Modal>
         <button
@@ -204,4 +232,4 @@ function CreatEmployeeForm() {
   );
 }
 
-export default CreatEmployeeForm;
+export default CreateEmployeeForm;
