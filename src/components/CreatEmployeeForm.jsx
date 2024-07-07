@@ -9,7 +9,7 @@ import Dropdown from "./Dropdown";
 import Input from "./Input";
 import { NumberInput } from "./NumberInput";
 
-function Form() {
+function CreatEmployeeForm() {
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
@@ -195,7 +195,7 @@ function Form() {
         </Modal>
         <button
           type="submit"
-          className="bg-[#65a30d] text-white border-white p-4 rounded-md"
+          className="bg-[#3f6212] text-white border-white p-4 rounded-md"
         >
           Submit
         </button>
@@ -204,4 +204,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default CreatEmployeeForm;
