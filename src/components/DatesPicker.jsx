@@ -2,7 +2,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
-import { Modal } from "mod-mod-modal-for-msg-registry";
+import { Modal } from "react-modal-notice";
 import PropTypes from "prop-types";
 import { useState } from "react";
 

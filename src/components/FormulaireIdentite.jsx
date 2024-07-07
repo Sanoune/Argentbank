@@ -1,6 +1,6 @@
-import { Modal } from "mod-mod-modal-for-msg-registry";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Modal } from "react-modal-notice";
+import { useDispatch } from "react-redux";
 import states from "../data/states.json";
 import status from "../data/statusEmployee.json";
 import { addEmployee } from "../store/employeeSlice";
@@ -11,8 +11,7 @@ import { NumberInput } from "./NumberInput";
 
 function Form() {
   const dispatch = useDispatch();
-  const employees = useSelector((state) => state.employees);
-  console.log(employees);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,9 +19,9 @@ function Form() {
     startDate: null,
     street: "",
     city: "",
-    zipcode: 0,
-    statsSelection: "",
-    depSelection: "",
+    zipCode: 0,
+    state: "",
+    department: "",
   });
   const [modalMessage, setModalMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,9 +51,9 @@ function Form() {
       !formData.startDate ||
       !formData.street ||
       !formData.city ||
-      !formData.zipcode ||
-      !formData.statsSelection ||
-      !formData.depSelection
+      !formData.zipCode ||
+      !formData.state ||
+      !formData.department
     ) {
       setModalMessage("Please fill in all required fields.");
       setIsModalOpen(true);
@@ -75,9 +74,9 @@ function Form() {
       startDate: null,
       street: "",
       city: "",
-      zipcode: 0,
-      statsSelection: "",
-      depSelection: "",
+      zipCode: 0,
+      state: "",
+      department: "",
     });
     setModalMessage("Employee added successfully!");
     setIsModalOpen(true);
@@ -160,20 +159,20 @@ function Form() {
                 value: state.abbreviation,
               }))}
               onSelect={(selectedItem) =>
-                setFormData({ ...formData, statsSelection: selectedItem })
+                setFormData({ ...formData, state: selectedItem })
               }
             />
             <div>
-              <label htmlFor="zipcode">Zip Code</label>
+              <label htmlFor="zipCode">Zip Code</label>
               <NumberInput
                 aria-label="Demo number input"
                 placeholder="Type a number…"
-                value={formData.zipcode}
-                name="zipcode"
+                value={formData.zipCode}
+                name="zipCode"
                 onChange={(event, val) => {
                   setFormData({
                     ...formData,
-                    zipcode: val,
+                    zipCode: val,
                   });
                 }}
               />
@@ -188,7 +187,7 @@ function Form() {
             value: statu.label,
           }))}
           onSelect={(selectedItem) =>
-            setFormData({ ...formData, depSelection: selectedItem })
+            setFormData({ ...formData, department: selectedItem })
           }
         />
         <Modal isOpen={isModalOpen} onClose={closeModal}>

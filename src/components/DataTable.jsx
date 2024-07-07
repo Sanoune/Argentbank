@@ -7,9 +7,8 @@ const DataTable = ({ employees, columns }) => {
       <DataGrid
         rows={employees}
         columns={columns}
-        pageSize={5}
         pagination
-        getRowId={(row) => row.firstName + row.lastName}
+        pageSizeOptions={[10, 25, 50, 100]}
       />
     </div>
   );
